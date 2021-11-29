@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: imafidonazurevotingappredis 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: imafidonazurevotingappredis
+  template:
+    metadata:
+      labels:
+        app: imafidonazurevotingappredis 
+    spec:
+      containers:
+        - name: imafidonazurevotingappredis 
+          image: sly2020.azurecr.io/imafidonazurevotingappredis
+          ports:
+          - containerPort: 80
